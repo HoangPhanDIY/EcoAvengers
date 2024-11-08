@@ -1,0 +1,161 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url(image/background-repeat.jpg);
+  background-size: cover;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.profile-photo input {
+  background-color: none;
+}
+
+.left-column,
+.right-column {
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+.left-column {
+  flex: 2;
+}
+
+.right-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+form input,
+.right-column .block input,
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.gender-selection {
+  display: flex;
+  align-items: center;
+  padding: 15px 15px;
+  width: auto;
+  text-align: center;
+}
+
+.gender-selection label:first-of-type {
+  margin-right: 50px; /* Khoảng cách giữa "Giới tính" và các ô chọn */
+}
+
+.gender-option {
+  display: flex;
+  align-items: center;
+  margin-right: 15px; /* Khoảng cách giữa các lựa chọn */
+}
+
+.gender-option input[type="radio"] {
+  margin-right: 8px; /* Khoảng cách giữa ô radio và nhãn */
+}
+
+form .gender-selection label {
+  font-size: 14px;
+  font-weight: 500;
+}
+.dob select {
+  width: 32.9%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.place select,
+.place input {
+  width: 24.5%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.container .left-column .profile-photo .profile-photo-button button {
+  background-color: rgba(0, 0, 0, 0);
+  color: black;
+  font-weight: 600;
+}
+
+button {
+  background-color: cornflowerblue;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(43, 80, 150);
+}
+
+.profile-photo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.profile-photo img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 5px;
+}
+
+.block,
+.left-column {
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.update-button {
+  background-color: green;
+}
+.update-button:hover {
+  background-color: rgb(12, 73, 12);
+}
+
+/* Style for aligning buttons in the same row */
+.button-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.button-row button,
+.button-row input[type="file"] {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
