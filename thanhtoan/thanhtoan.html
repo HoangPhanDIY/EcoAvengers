@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Avengers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .header {
+            background-color: #8ffc9d;
+            padding: 10px;
+            text-align: center;
+        }
+        .header img {
+            height: 50px;
+        }
+        .nav {
+            background-color: #8ffc9d;
+            overflow: hidden;
+        }
+        .nav a {
+            float: left;
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .form-container, .payment-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-container input, .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .payment-container {
+            text-align: center;
+        }
+        .payment-container .total {
+            font-size: 24px;
+            color: red;
+            margin-bottom: 20px;
+        }
+        .payment-container input[type="radio"] {
+            margin: 10px;
+        }
+        .payment-container button {
+            background-color: orange;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .footer {
+            background-color: #8ffc9d;
+            padding: 20px;
+            text-align: center;
+        }
+        .footer .column {
+            display: inline-block;
+            width: 30%;
+            vertical-align: top;
+            padding: 10px;
+        }
+        .footer .column h3 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="logo.png" alt="Eco Avengers Logo">
+    </div>
+    <div class="nav">
+        <a href="#">Trang Chủ</a>
+        <a href="#">Sản Phẩm Mới</a>
+        <a href="#">Mua Sản Phẩm</a>
+        <a href="#">Bán Sản Phẩm</a>
+        <a href="#">Khuyến Mãi</a>
+        <a href="#">Tích Điểm - Đổi Quà</a>
+        <a href="#">Tài Khoản</a>
+    </div>
+    <div class="container">
+        <div class="form-container">
+            <h2>Thông Tin Đơn Hàng:</h2>
+            <input type="text" placeholder="Tên người nhận">
+            <input type="text" placeholder="Số điện thoại">
+            <input type="text" placeholder="Địa chỉ">
+            <textarea placeholder="Ghi chú"></textarea>
+        </div>
+        <div class="payment-container">
+            <h2>Thông Tin Thanh Toán</h2>
+            <div class="total">599.999 VND</div>
+            <div>
+                <input type="radio" name="payment" value="cash"> Thanh toán khi nhận hàng<br>
+                <input type="radio" name="payment" value="momo"> Ví MoMo<br>
+                <input type="radio" name="payment" value="zalopay"> ZaloPay<br>
+                <input type="radio" name="payment" value="bank"> Chuyển khoản ngân hàng<br>
+            </div>
+            <button>Xác Nhận</button>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="column
