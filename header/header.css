@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-image: linear-gradient(0, #b7e892, #93dc5c);
+  padding: 10px 20px;
+}
+
+.header-list {
+  list-style: none;
+  min-height: 18px;
+}
+
+.header-list-link,
+.header-list-link-login {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.header-list-support,
+.header-list-login {
+  text-decoration: none;
+  color: black;
+}
+
+.header-list,
+.header-list-link,
+.header-list-support {
+  display: inline-flex;
+  align-items: center;
+}
+
+.header-list-link-login {
+  font-weight: 500;
+}
+
+.header-list-login:hover,
+.header-list-support:hover {
+  cursor: pointer;
+}
+
+.top-bar {
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid #000;
+}
+
+.social-media span {
+  margin-right: 10px;
+}
+
+.social-media a img {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.nav-links img {
+  width: 30px;
+  margin-top: auto;
+}
+
+.header-list-link img {
+  width: 16px;
+  margin-right: 3px;
+}
+
+.header-list img {
+  width: 20px;
+  margin-left: 10px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 55px;
+  margin-right: 10px;
+}
+
+.top-bar .logo h1 {
+  font-size: 50px;
+}
+
+.user-cart a img {
+  width: 20px;
+  margin-left: 10px;
+}
+
+.main-nav {
+  background-image: none;
+  height: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: auto;
+  justify-content: space-around;
+  font-weight: 600;
+  position: relative;
+  padding: 5px 0px;
+}
+
+.nav-links a {
+  color: black;
+  text-decoration: none;
+  position: relative;
+  display: block;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background-color: #000;
+  bottom: 0;
+  left: 0;
+  transition: all 0.3s ease-in-out;
+  transform: scaleX(0);
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-links a {
+  margin-right: 40px;
+}
+
+.submenu,
+.submenu li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.submenu li {
+  width: 100%;
+}
+
+.submenu li a {
+  padding: 10px 0px;
+}
+
+.submenu li a:hover {
+  background-color: #eaeaea;
+}
+
+.nav-links > li:hover .submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0.5);
+}
+
+.search-bar input {
+  top: 20px;
+  width: 80%;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  left: 10%;
+}
+
+.search-bar button {
+  margin-left: 1px;
+  background-color: #fff;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.search-bar img {
+  width: 12.9px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+}
+
+.modal-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-body {
+  background-color: #fff;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+  border-radius: 5px;
+}
