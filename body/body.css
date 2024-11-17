@@ -1,0 +1,176 @@
+/* head */
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* body */
+.banner-wrapper {
+  padding: 20px;
+  background-color: transparent;
+  height: 230px;
+}
+
+.banner-container {
+  display: flex; /* Sử dụng flexbox */
+  justify-content: space-between; /* Chia đều không gian giữa các phần tử */
+  align-items: flex-start; /* Đảm bảo các phần tử căn chỉnh theo chiều dọc */
+  width: 100%;
+}
+
+.banner {
+  position: relative;
+  object-fit: cover;
+  flex: 2.5;
+  overflow: hidden;
+  width: 100%;
+  height: 230px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner .slides {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.banner .banner-image {
+  min-width: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.banner .prev,
+.banner .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 5px 10px;
+  z-index: 2;
+}
+
+.banner .prev {
+  left: 10px;
+}
+
+.banner .next {
+  right: 10px;
+}
+
+/* Chấm điều hướng */
+.dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot.active {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+/* Phần hình ảnh bên phải */
+.banner-image {
+  position: relative;
+  object-fit: cover;
+  flex: 1;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100%;
+  height: 230px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-bottom,
+.image-top {
+  position: relative;
+  flex: 1;
+  height: 230px;
+  display: flex;
+  width: 90%;
+  max-width: 100%;
+  margin: 0 auto;
+  border-radius: 4px;
+}
+
+.image-top img,
+.image-bottom img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.image-top img {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .banner-container {
+    flex-direction: column;
+  }
+
+  .banner {
+    flex: none;
+    width: 100%;
+    height: 200px;
+  }
+
+  .banner-side {
+    flex: none;
+    width: 100%;
+    flex-direction: row;
+    gap: 5px;
+  }
+
+  .banner-side-image {
+    flex: 1;
+    height: 150px;
+  }
+
+  .dots {
+    bottom: 10px;
+  }
+
+  .prev,
+  .next {
+    padding: 5px;
+    font-size: 18px;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+}
