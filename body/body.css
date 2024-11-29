@@ -1,24 +1,24 @@
-/* head */
-
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 body {
   font-family: "Montserrat", sans-serif;
+  background: linear-gradient(to top, #e2e2e2, #c9d6ff);
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 /* body */
 .banner-wrapper {
   padding: 20px;
   background-color: transparent;
-  height: 230px;
+  height: calc(100% - 150px);
 }
 
 .banner-container {
-  display: flex; /* Sử dụng flexbox */
-  justify-content: space-between; /* Chia đều không gian giữa các phần tử */
-  align-items: flex-start; /* Đảm bảo các phần tử căn chỉnh theo chiều dọc */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   width: 100%;
 }
 
@@ -28,7 +28,7 @@ body {
   flex: 2.5;
   overflow: hidden;
   width: 100%;
-  height: 230px;
+  width: calc(100% - 150px);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -135,6 +135,164 @@ body {
 .image-top img {
   margin-bottom: 10px;
 }
+
+/* sản phẩm */
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+.category {
+  margin-bottom: 30px;
+}
+
+.category h2 {
+  position: relative;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  color: #333;
+  text-align: left;
+}
+
+.category h2::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 2px;
+  background-color: #6542b6;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+/* Card sản phẩm */
+.product-card {
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  border-top-right-radius: 80px;
+  object-fit: cover;
+}
+
+.product-card .info-icon {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #6542b6;
+  background-color: transparent;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.product-card .info-icon:hover {
+  color: #20133f;
+}
+
+.product-card .info-icon::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: 50%;
+  right: 110%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 5px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 3;
+}
+
+.product-card .info-icon:hover::after {
+  opacity: 1;
+  transform: translateY(-50%) translateX(-5px);
+}
+
+.product-card .info {
+  padding: 8px;
+  display: block;
+  max-height: calc(1.5em * 3);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product-card .info a {
+  font-size: 14px;
+}
+
+.product-card .info .price {
+  color: red;
+  font-weight: bold;
+}
+
+/* Phần nút hành động */
+.product-card .actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #ddd;
+}
+
+.product-card .actions button {
+  padding: 8px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.product-card .actions #seller-info,
+.product-card .actions .cart {
+  height: 30px;
+  background-color: #6542b6;
+  color: white;
+  border-radius: 16px 16px 8px 8px;
+}
+
+.product-card .actions #seller-info:hover,
+.product-card .actions .cart:hover {
+  height: 30px;
+  background-color: #20133f;
+  color: white;
+  border-radius: 16px 16px 8px 8px;
+}
+
+/* THÔNG TIN SẢN PHẨM */
 
 @media (max-width: 768px) {
   .banner-container {

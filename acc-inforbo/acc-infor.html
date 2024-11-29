@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Account</title>
+    <link rel="stylesheet" href="acc-infor.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Nhập mã giới thiệu</h2>
+      <input
+        type="text"
+        id="referral-code"
+        placeholder="Nhập mã giới thiệu..."
+      />
+      <button id="save-referral">Lưu</button>
+    </div>
+    <div class="personal-payment">
+      <div class="personal-info-section">
+        <h2>THÔNG TIN CÁ NHÂN</h2>
+        <form id="personal-info-form">
+          <label for="display-name">Tên hiển thị</label>
+          <input type="text" id="display-name" />
+
+          <label>Giới tính</label>
+          <input type="radio" id="male" name="gender" value="Nam" />
+          <label for="male">Nam</label>
+          <input type="radio" id="female" name="gender" value="Nữ" />
+          <label for="female">Nữ</label>
+
+          <label for="id-number">Căn cước công dân</label>
+          <input type="text" id="id-number" />
+
+          <label for="dob">Ngày/tháng/năm sinh</label>
+          <input type="date" id="dob" />
+
+          <label for="phone">Số điện thoại</label>
+          <input type="tel" id="phone" />
+
+          <label for="email">Email</label>
+          <input type="email" id="email" />
+
+          <button type="button" id="update-personal-info">
+            Cập nhật thông tin
+          </button>
+        </form>
+      </div>
+      <div class="payment-info-form">
+        <h2>THÔNG TIN THANH TOÁN</h2>
+        <form id="payment-info-form">
+          <label for="bank-name">Tên ngân hàng</label>
+          <input type="text" id="bank-name" />
+
+          <label for="account-number">Số tài khoản</label>
+          <input type="text" id="account-number" />
+
+          <label for="account-holder">Chủ tài khoản</label>
+          <input type="text" id="account-holder" />
+
+          <button type="button" id="update-payment-info">
+            Cập nhật thông tin
+          </button>
+        </form>
+      </div>
+    </div>
+    <script src="acc-infor.js"></script>
+  </body>
+</html>

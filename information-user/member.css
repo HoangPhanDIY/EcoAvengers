@@ -1,0 +1,188 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #c9d6ff;
+  background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.profile-photo input {
+  background-color: none;
+}
+
+.left-column,
+.right-column {
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+.left-column {
+  flex: 2;
+}
+
+.right-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+form input,
+.right-column .block input,
+button {
+  background-color: #eee;
+  border: none;
+  margin: 8px 0;
+  padding: 10px 15px;
+  font-size: 13px;
+  border-radius: 8px;
+  width: 100%;
+  outline: none;
+}
+
+.gender-selection {
+  display: flex;
+  align-items: center;
+  padding: 15px 15px;
+  width: auto;
+  text-align: center;
+}
+
+.gender-selection label:first-of-type {
+  margin-right: 50px;
+}
+
+.gender-option {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.gender-option input[type="radio"] {
+  margin-right: 8px;
+}
+
+form .gender-selection label {
+  font-size: 14px;
+  font-weight: 500;
+}
+.dob select {
+  background-color: #eee;
+  border: none;
+  margin: 8px 0;
+  padding: 10px 15px;
+  font-size: 13px;
+  border-radius: 8px;
+  width: 32.9%;
+  outline: none;
+}
+.place select,
+.place input {
+  background-color: #eee;
+  border: none;
+  margin: 8px 0;
+  padding: 10px 15px;
+  font-size: 13px;
+  border-radius: 8px;
+  width: 24.5%;
+  outline: none;
+}
+.container .left-column .profile-photo .profile-photo-button button {
+  background-color: rgba(0, 0, 0, 0);
+  color: black;
+  font-weight: 600;
+}
+
+button {
+  background-color: #512da8;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #301c5f;
+}
+
+.profile-photo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.profile-photo img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 5px;
+}
+
+.block,
+.left-column {
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.update-button {
+  background-color: green;
+}
+.update-button:hover {
+  background-color: rgb(12, 73, 12);
+}
+
+/* Style for aligning buttons in the same row */
+.button-row,
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.button,
+.custom-button {
+  padding: 10px;
+  margin: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+#startButton,
+.custom-button {
+  background-color: #512da8;
+  width: 100%;
+}
+
+button:focus {
+  outline: none; /* Bỏ viền khi nút được chọn */
+}
+
+#preview,
+#canvas {
+  width: 100%; /* Hoặc kích thước mong muốn */
+  height: auto;
+  display: block; /* Đảm bảo video được hiển thị */
+}

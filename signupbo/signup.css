@@ -1,0 +1,131 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  background-image: url(image/blogin.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  backdrop-filter: blur(50px);
+  backdrop-filter: invert(15%);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 1000px;
+}
+
+.form-container {
+  padding: 10px;
+  border-radius: 20px;
+  color: #fff;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.form-header img {
+  width: 50px;
+}
+
+.container .exit-button-register {
+  position: absolute;
+  font-size: 6px;
+  top: 10px;
+  right: 10px;
+}
+
+.container .exit-button-register button {
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.container .exit-button-register:hover {
+  background-color: darkred;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+  color: black;
+}
+
+input,
+select {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+  width: 95%;
+}
+
+.dob {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dob select {
+  width: 30%;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.checkbox input {
+  margin-right: 10px;
+}
+
+.checkbox .agree {
+  color: red;
+}
+
+.checkbox {
+  color: #000;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #4267b2;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  padding: 10px;
+  border-radius: 5px;
+  background: #22407c;
+  color: #fff;
+  cursor: pointer;
+}
+span {
+  color: red;
+}

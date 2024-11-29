@@ -6,16 +6,16 @@ body {
 }
 
 footer {
-  background: linear-gradient(to top, #e2e2e2, #c9d6ff);
-  color: white;
+  background: #fff;
   padding: 20px 0;
 }
 
 .footer-container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
   padding: 0 20px;
+  border-bottom: 1px solid #333;
 }
 
 .footer-column {
@@ -63,18 +63,73 @@ footer {
   margin: 10px 0;
 }
 
-.footer-column input {
-  width: 95%;
-  padding: 10px;
-  margin: 10px 0;
+.support-email {
+  display: flex;
+  justify-content: space-around;
+  justify-items: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.container-input {
   border: none;
-  border-radius: 5px;
+  font-size: 13px;
+  border-radius: 8px;
+  width: 100%;
+  outline: none;
+}
+
+.input-group .input {
+  background-color: #fff;
+  border: 1px solid #cfcfcf;
+  margin: 8px 0;
+  padding: 10px 2px;
+  font-size: 13px;
+  border-radius: 8px;
+  width: 100%;
+  outline: none;
+}
+
+.input-group {
+  position: relative;
+}
+
+.input-group .input:focus {
+  border-color: #00a846;
+}
+
+.input-group .input:focus,
+.input-group .input:not(:placeholder-shown) {
+  border-color: #00a846;
+}
+
+.input-group label {
+  position: absolute;
+  cursor: text;
+  top: 18px;
+  left: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  background: #fff;
+  padding: 0 2px;
+  color: #999;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.input-group .input:focus + label,
+.input-group .input:not(:placeholder-shown) + label {
+  top: 0;
+  left: 15px;
+  color: #00a846;
+  font-size: 11px;
 }
 
 .footer-column button {
-  width: 100%;
-  padding: 10px;
-  background-color: #512da8;
+  width: 30%;
+  height: 35px;
+  font-size: 10px;
+  background-color: #00a846;
   border: none;
   border-radius: 5px;
   color: white;
@@ -83,7 +138,7 @@ footer {
 }
 
 .footer-column button:hover {
-  background-color: #361e6e;
+  background-color: #00682b;
 }
 
 .payment-icons img,

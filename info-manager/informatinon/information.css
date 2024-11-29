@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  justify-content: center;
+  align-items: center;
+  background-color: #c9d6ff;
+  background: transparent;
+}
+
+h1 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+form input,
+.block input,
+button,
+.confirm-password input {
+  background-color: #fff;
+  border: none;
+  margin: 8px 0;
+  padding: 10px 15px;
+  font-size: 13px;
+  border-radius: 12px;
+  width: 100%;
+  outline: none;
+}
+
+.gender-selection {
+  display: flex;
+  align-items: center;
+  padding: 15px 15px;
+  width: auto;
+  text-align: center;
+}
+
+.gender-selection label:first-of-type {
+  margin-right: 50px;
+}
+
+.gender-option {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.gender-option input[type="radio"] {
+  margin-right: 8px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-left: 10px;
+  text-align: left;
+}
+
+span {
+  color: red;
+}
+
+form .gender-selection label {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+.dob select {
+  background-color: #fff;
+  border: none;
+  margin: 8px 0;
+  padding: 10px 15px;
+  font-size: 13px;
+  border-radius: 12px;
+  width: 32.99%;
+  outline: none;
+}
+.place select,
+.place input {
+  background-color: #ffffff;
+  border: none;
+  margin: 8px 0;
+  padding: 10px 15px;
+  font-size: 13px;
+  border-radius: 12px;
+  width: 24.6%;
+  outline: none;
+}
+
+.profile-photo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.profile-photo img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 5px;
+}
+
+.update-button,
+.confirm-password button {
+  background-color: #704cc5;
+  color: #fff;
+  height: 50px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+.update-button:hover {
+  background-color: #240a5f;
+}
+
+.button-row,
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.button,
+.custom-button {
+  padding: 10px;
+  margin: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+#startButton,
+.custom-button {
+  background-color: #512da8;
+  width: 100%;
+  border-radius: 12px;
+  position: relative;
+}
+
+button:focus {
+  outline: none;
+}
+
+#preview,
+#canvas,
+#scanqr {
+  height: auto;
+  display: block;
+}
+
+/* Khung camera */
+#preview {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  display: none;
+  z-index: 1;
+}
+
+#scanqr {
+  position: absolute;
+  top: calc(50% + 30px);
+  left: 50%;
+  width: 600px;
+  height: 500px;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  display: none;
+  z-index: 2;
+}
+
+form {
+  display: block;
+}

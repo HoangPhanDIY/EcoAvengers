@@ -1,0 +1,517 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+.contianer-product-infomation {
+  padding: 10px;
+  margin: 0 auto;
+  color: #fff;
+}
+
+.card-wrapper {
+  max-width: 1000px;
+  border-radius: 10px;
+  margin: 0 auto;
+  background: linear-gradient(to right, #b2a9c5, #8973bd);
+  box-shadow: 2px 2px 20px aqua;
+}
+
+.product-imgs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+.img-display {
+  width: 450px;
+  height: 450px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.img-showcase {
+  display: flex;
+  width: 100%;
+  transition: all 0.5s ease;
+}
+
+.img-showcase img {
+  min-width: 100%;
+}
+
+.img-select {
+  display: flex;
+}
+
+.img-item {
+  margin: 0.3rem;
+  width: 86px;
+  height: 86px;
+  overflow: hidden;
+}
+
+.img-item:nth-child(1),
+.img-item:nth-child(2),
+.img-item:nth-child(3),
+.img-item:nth-child(4) {
+  margin-right: 0;
+}
+
+.img-item:hover {
+  opacity: 0.8;
+}
+
+.product-content {
+  padding: 2rem 1rem;
+}
+
+.back {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.back_button {
+  position: absolute;
+  top: 2%;
+  right: 15%;
+  background-color: transparent;
+  color: #fff;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.back_button:hover {
+  color: #333;
+  background-color: transparent;
+}
+
+.product-title {
+  font-size: 2rem;
+  text-transform: capitalize;
+  font-weight: 700;
+  position: relative;
+  color: #fff;
+  margin: 1rem 0;
+}
+
+.product-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 80px;
+  background: #fff;
+}
+
+.product-link {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 0.9rem;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  background: #256eff;
+  color: #fff;
+  padding: 0 0.3rem;
+  transition: all 0.5s ease;
+}
+
+.product-link:hover {
+  opacity: 0.9;
+}
+
+.product-rating {
+  color: #ffc107;
+}
+
+.product-rating span {
+  font-weight: 600;
+  color: #fff;
+}
+
+.product-price {
+  margin: 1rem 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.product-price span {
+  font-weight: 400;
+}
+
+.last-price span {
+  color: #333;
+  text-decoration: line-through;
+}
+
+.new-price span {
+  color: red;
+  font-weight: 800;
+}
+
+.product-detail h4 {
+  text-transform: capitalize;
+  color: #fff;
+  padding-bottom: 0.6rem;
+}
+
+.product-detail p {
+  font-size: 0.9rem;
+  padding: 0.3rem;
+  opacity: 0.8;
+}
+
+.product-detail ul {
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+
+.product-detail ul li {
+  margin: 0;
+  list-style: none;
+  background: url(shoes_images/checked.png) left center no-repeat;
+  background-size: 18px;
+  padding-left: 1.7rem;
+  margin: 0.4rem 0;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.product-detail ul li span {
+  font-weight: 400;
+}
+
+.purchase-info {
+  margin: 1.5rem 0;
+}
+
+.purchase-info input,
+.purchase-info .btn {
+  border: 1.5px solid #ddd;
+  border-radius: 25px;
+  text-align: center;
+  padding: 0.45rem 0.8rem;
+  outline: 0;
+  margin-right: 0.2rem;
+  margin-bottom: 1rem;
+}
+
+.purchase-info input {
+  width: 60px;
+}
+
+.purchase-info .btn {
+  cursor: pointer;
+  color: #fff;
+}
+
+.purchase-info .btn:first-of-type {
+  background: #256eff;
+}
+
+.purchase-info .btn:last-of-type {
+  background: #f64749;
+}
+
+.purchase-info .btn:hover {
+  opacity: 0.9;
+}
+
+.container-icon {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.container-icon:hover > :not(:hover) {
+  filter: blur(2px);
+  opacity: 0.5;
+}
+
+.card-icon {
+  display: flex;
+  margin: auto;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #cecdcd;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transition: all 2s;
+}
+
+.instagram,
+.tiktok,
+.facebook,
+.messenger,
+.twitter,
+.whatsapp {
+  align-items: start;
+  justify-content: center;
+  align-items: center;
+}
+
+.instagram i,
+.tiktok i,
+.facebook i,
+.messenger i,
+.twitter i,
+.whatsapp i {
+  position: absolute;
+  margin: auto;
+  color: #000;
+  font-size: 1rem;
+}
+
+.facebook .circle {
+  position: absolute;
+  margin: auto;
+  margin-right: 0px;
+  width: 0px;
+  height: 0px;
+  background: linear-gradient(to top, #0165e1, #17a9fd);
+  border-radius: 15px;
+  transition: all 0.5s;
+}
+
+.facebook:hover {
+  .circle {
+    background: linear-gradient(to top, #0165e1, #17a9fd);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transition: all 0.5s;
+  }
+
+  .fa-brands {
+    color: #ffffff;
+  }
+
+  .card-icon:hover {
+    border-color: white;
+  }
+}
+
+.messenger .circle {
+  position: absolute;
+  margin: auto;
+  margin-right: 0px;
+  width: 0px;
+  height: 0px;
+  background: #fff;
+  border-radius: 15px;
+  transition: all 0.5s;
+}
+
+.messenger:hover {
+  .circle {
+    background: #eee;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transition: all 0.5s;
+  }
+
+  .fa-facebook-messenger {
+    background: radial-gradient(
+      circle at 30% 90%,
+      #0695ff 10%,
+      #a334fa 50%,
+      #ff6968 85%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .card-icon:hover {
+    border-color: white;
+  }
+}
+
+.instagram .circle {
+  position: absolute;
+  margin: auto;
+  margin-right: 0px;
+  width: 0px;
+  height: 0px;
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+  border-radius: 50%;
+  transition: all 0.5s;
+}
+
+.instagram:hover {
+  .circle {
+    background: radial-gradient(
+      circle at 30% 107%,
+      #fdf497 0%,
+      #fdf497 5%,
+      #fd5949 45%,
+      #d6249f 60%,
+      #285aeb 90%
+    );
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transition: all 0.5s;
+  }
+
+  .fa-brands {
+    color: #ffffff;
+  }
+
+  .card-icon:hover {
+    border-color: white;
+  }
+}
+
+.tiktok .circle {
+  position: absolute;
+  margin: auto;
+  margin-right: 0px;
+  width: 0px;
+  height: 0px;
+  background: #2a2a2a;
+  border-radius: 50%;
+  transition: all 0.5s;
+}
+
+.tiktok:hover {
+  .circle {
+    background: #2a2a2a;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transition: all 0.5s;
+  }
+
+  .fa-brands {
+    color: #ffffff;
+  }
+
+  .card-icon:hover {
+    border-color: white;
+  }
+}
+
+.twitter .circle {
+  position: absolute;
+  margin: auto;
+  margin-right: 0px;
+  width: 0px;
+  height: 0px;
+  background: #2a2a2a;
+  border-radius: 50%;
+  transition: all 0.5s;
+}
+
+.twitter:hover {
+  .circle {
+    background: #1da1f2;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transition: all 0.5s;
+  }
+
+  .fa-twitter {
+    color: #ffffff;
+  }
+
+  .card-icon:hover {
+    border-color: white;
+  }
+}
+
+.whatsapp .circle {
+  position: absolute;
+  margin: auto;
+  margin-right: 0px;
+  width: 0px;
+  height: 0px;
+  background: #2a2a2a;
+  border-radius: 50%;
+  transition: all 0.5s;
+}
+
+.whatsapp:hover {
+  .circle {
+    background: #25d366;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transition: all 0.5s;
+  }
+
+  .fa-whatsapp {
+    color: #ffffff;
+  }
+
+  .card-icon:hover {
+    border-color: white;
+  }
+}
+
+.contianer-product-infomation .close .close-button {
+  position: absolute;
+  top: 0;
+  right: 50px;
+  background-color: transparent;
+  color: #333;
+  font-size: 24px;
+  padding: 6px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  z-index: 2000;
+  margin: 10px;
+}
+.contianer-product-infomation .close .close-button:hover {
+  color: red;
+}
+
+@media screen and (min-width: 992px) {
+  .card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1.5rem;
+  }
+
+  .card-wrapper {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .product-imgs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .product-content {
+    padding-top: 0;
+  }
+}

@@ -1,0 +1,564 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  font-family: "Montserrat", sans-serif;
+  color: #333;
+}
+
+.sidebar {
+  min-width: 260px;
+  background: linear-gradient(to left, #7abe96, #2fc76e);
+  color: white;
+  padding-top: 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  z-index: 1000;
+  overflow-y: auto;
+  box-shadow: inset -2px 0 0 0 orangered;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile label img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.profile p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 200px;
+  padding: 10px 15px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.button i {
+  margin-right: 8px;
+}
+
+.button p {
+  margin: 0;
+}
+
+.button:hover {
+  color: #a1a1a1;
+}
+
+.sidebar p.sub-text {
+  font-size: 0.9em;
+  color: #ddd;
+  cursor: pointer;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  padding: 12px 20px;
+  margin: 10px 15px;
+  text-decoration: none;
+  font-weight: bold;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.sidebar a.active,
+.sidebar a:hover {
+  background-color: #ffffff;
+  color: #00a846;
+  padding-left: 30px;
+  margin-right: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 10px auto;
+  padding: 10px;
+}
+
+.container strong {
+  padding-top: auto;
+  text-align: right;
+  margin: 10px;
+}
+
+/* Nội dung chính */
+.main-content {
+  flex-grow: 1;
+  padding: 50px;
+  padding-top: 20px;
+  margin-left: 260px;
+  width: calc(100% - 260px);
+  background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+  min-height: 100vh;
+  position: relative;
+}
+
+.main-content h2 {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.profile-item {
+  margin: 15px 0;
+  font-size: 1em;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+.profile-item strong {
+  display: inline-block;
+  width: 150px;
+  font-weight: bold;
+}
+
+.profile-item span {
+  color: #555;
+  font-size: 1em;
+}
+
+/* cập nhật tài khoản */
+h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#account-update {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form input,
+.block input,
+button,
+.confirm-password input {
+  background-color: #fff;
+  border: none;
+  margin: 8px 0;
+  padding: 10px 15px;
+  font-size: 13px;
+  border-radius: 12px;
+  width: 100%;
+  outline: none;
+}
+
+.gender-selection {
+  display: flex;
+  align-items: center;
+  padding: 15px 15px;
+  width: auto;
+  text-align: center;
+}
+
+.gender-selection label:first-of-type {
+  margin-right: 50px;
+}
+
+.gender-option {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.gender-option input[type="radio"] {
+  margin-right: 8px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-left: 10px;
+}
+
+span {
+  color: red;
+}
+
+form .gender-selection label {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+.dob select {
+  background-color: #fff;
+  border: none;
+  margin: 8px 0;
+  padding: 10px 15px;
+  font-size: 13px;
+  border-radius: 12px;
+  width: calc(100% / 3 - 4px);
+  outline: none;
+}
+.place select,
+.place input {
+  background-color: #ffffff;
+  border: none;
+  margin: 8px 0;
+  padding: 10px 15px;
+  font-size: 13px;
+  border-radius: 12px;
+  width: calc(100% / 4 - 4px);
+  outline: none;
+}
+
+.profile-photo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.profile-photo img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 5px;
+}
+
+.update-button,
+.confirm-password button {
+  background-color: #00a846;
+  color: #fff;
+  height: 50px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+.update-button:hover {
+  background-color: #125026;
+}
+
+.button-row,
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.button,
+.custom-button {
+  padding: 10px;
+  margin: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+#startButton,
+.custom-button {
+  background-color: #00a846;
+  width: 100%;
+  border-radius: 12px;
+  position: relative;
+}
+
+button:focus {
+  outline: none;
+}
+
+#preview,
+#canvas,
+#scanqr {
+  height: auto;
+  display: block;
+}
+
+/* Khung camera */
+#preview {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  transform: translate(-50%, 20%);
+  object-fit: cover;
+  display: none;
+  z-index: 1;
+}
+
+#scanqr {
+  position: absolute;
+  top: calc(50% + 30px);
+  left: 50%;
+  width: 600px;
+  height: 500px;
+  transform: translate(-50%, calc(20% - 70px));
+
+  object-fit: cover;
+  display: none;
+  z-index: 2;
+}
+
+form {
+  display: block;
+}
+
+/* mua hàng, bán hàng */
+.nav-tabs {
+  display: flex;
+  white-space: nowrap;
+  justify-content: space-between;
+  background-color: #00a846;
+  padding: 10px 0;
+  padding-right: calc(100vw - 100%);
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.tab-btn:hover {
+  color: #ffcc00;
+}
+
+.tab-btn:hover::after,
+.tab-btn.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background: #ffcc00;
+  transition: all 0.3s ease;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active-tab {
+  display: block;
+}
+
+/* nav back */
+.order-nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f8f8;
+  padding: 10px 20px;
+  border-bottom: 2px solid #ccc;
+  list-style: none;
+  margin-top: 20px;
+}
+
+.order-nav i {
+  transform: rotate(180deg);
+}
+
+.order-id {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.back_button {
+  background-color: transparent;
+  color: #000;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 5px;
+  margin-left: 0;
+}
+
+.back_button:hover {
+  color: #333;
+  background-color: transparent;
+}
+
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10px;
+  position: relative;
+  background-color: #ffffff;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  flex: 1;
+}
+
+.circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ccc;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.step p {
+  font-size: 12px;
+  color: #333;
+  text-align: center;
+  margin-top: 8px;
+  line-height: 1.2;
+}
+
+.step::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 12px);
+  left: calc(98% - 60px);
+  width: calc(100% - 35px);
+  height: 4px;
+  background: #ccc;
+  z-index: 0;
+}
+
+.step:last-child::after {
+  display: none;
+}
+
+.step.active .circle {
+  background-color: #2dc258;
+  transform: scale(1.2);
+}
+
+.step.completed .circle {
+  background-color: #2dc258;
+  opacity: 0.8;
+}
+
+.step.completed::after {
+  background: #2dc258;
+}
+
+.step:last-child::after {
+  display: none;
+}
+
+.step.completed::after {
+  background: #2dc258;
+}
+
+.step.active .circle {
+  background-color: #2dc258;
+  transform: scale(1.2);
+}
+
+.step.completed .circle {
+  background-color: #2dc258;
+  opacity: 0.8;
+}
+
+.order-info {
+  display: flex;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+.info {
+  flex: 1;
+  font-size: 14px;
+  color: #333;
+}
+
+.info p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.info .icon {
+  margin-right: 5px;
+  color: #6c42e6;
+}
+
+.map {
+  flex: 1;
+  text-align: center;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 14px;
+  background-color: #6c42e6;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #025e28;
+}
+
+.icon {
+  margin-right: 5px;
+}
+
+/* thông tin sản phẩm */
+/* Mặc định ẩn các chi tiết đơn hàng */
+.order-details {
+  display: none;
+}
+
+#order-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="signup.css" />
+  </head>
+  <body>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+    </style>
+    <div class="register-form">
+      <div class="container">
+        <div class="form-container">
+          <div class="form-header">
+            <div class="exit-button-register">
+              <button class="exit-button-register" onclick="window.close()">
+                ×
+              </button>
+            </div>
+            <img src="image/users.png" alt="users" />
+            <h4>ĐĂNG KÝ</h4>
+          </div>
+          <form>
+            <label for="email">Email <span>*</span></label>
+            <input
+              type="email"
+              id="email"
+              placeholder="Vui lòng nhập email của bạn..."
+            />
+
+            <label for="phone">Số điện thoại <span>*</span></label>
+            <input
+              type="tel"
+              id="phone"
+              placeholder="Vui lòng nhập số điện thoại của bạn..."
+            />
+
+            <label for="password">Mật khẩu <span>*</span></label>
+            <input type="password" id="password" placeholder="" />
+
+            <label for="confirm-password"
+              >Nhập lại mật khẩu <span>*</span></label
+            >
+            <input type="password" id="confirm-password" placeholder="" />
+
+            <label for="dob">Ngày tháng năm sinh</label>
+            <div class="dob">
+              <select id="day">
+                <option value="">Ngày</option>
+              </select>
+              <select id="month">
+                <option value="">Tháng</option>
+              </select>
+              <select id="year">
+                <option value="">Năm</option>
+              </select>
+            </div>
+
+            <div class="checkbox">
+              <input type="checkbox" id="agree" />
+              <labe for="agree">
+                Tôi đã đọc và hoàn toàn đồng ý với
+                <a href="" class="agree">Điều khoản dịch vụ </a>&
+                <a href="" class="agree">Chính sách bảo mật </a>
+              </labe>
+            </div>
+
+            <button type="submit">ĐĂNG KÝ NGAY</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>

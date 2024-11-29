@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thông tin cá nhân</title>
+    <link rel="stylesheet" href="member.css" />
+  </head>
+  <body>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+    </style>
+    <div class="container">
+      <!-- Left Column - Personal Information -->
+      <div class="left-column">
+        <h2>THÔNG TIN CÁ NHÂN</h2>
+        <div class="profile-photo">
+          <div class="profile-photo-button">
+            <img id="avatarPreview" src="image/user.png" alt="Ảnh đại diện" />
+            <button onclick="document.getElementById('avatarInput').click()">
+              Đổi ảnh đại diện
+            </button>
+            <input
+              type="file"
+              id="avatarInput"
+              accept="image/*"
+              style="display: none"
+              onchange="updateAvatarPreview(event)"
+            />
+          </div>
+        </div>
+        <form id="personal_info_form">
+          <input type="text" id="fullName" placeholder="Họ và Tên" />
+          <div class="gender-selection">
+            <label for="gender">Giới tính:</label>
+
+            <div class="gender-option">
+              <input type="radio" id="male" name="gender" value="male" />
+              <label for="male">Nam</label>
+            </div>
+
+            <div class="gender-option">
+              <input type="radio" id="female" name="gender" value="female" />
+              <label for="female">Nữ</label>
+            </div>
+
+            <div class="gender-option">
+              <input type="radio" id="other" name="gender" value="other" />
+              <label for="other">Khác</label>
+            </div>
+          </div>
+          <input type="text" id="idNumber" placeholder="Căn cước công dân" />
+          <input type="text" id="issueDate" placeholder="Ngày cấp" />
+          <div class="dob">
+            <select id="day">
+              <option value="">Ngày</option>
+            </select>
+            <select id="month">
+              <option value="">Tháng</option>
+            </select>
+            <select id="year">
+              <option value="">Năm</option>
+            </select>
+          </div>
+          <div class="place">
+            <select id="province">
+              <option value="">Chọn tỉnh/thành</option>
+            </select>
+            <select id="district">
+              <option value="">Chọn quận/huyện</option>
+            </select>
+            <select id="ward">
+              <option value="">Chọn xã/phường</option>
+            </select>
+            <input type="text" id="address" placeholder="Thôn/xóm" />
+          </div>
+          <input type="text" id="address" placeholder="Số đường/ Số nhà" />
+          <input type="text" id="phone" placeholder="Số điện thoại" />
+          <input type="email" id="email" placeholder="Email" />
+
+          <!-- QR and Image Selection Buttons on Same Row -->
+          <div class="button-row">
+            <video id="preview" style="display: none" autoplay></video>
+            <canvas id="canvas" style="display: none"></canvas>
+
+            <div class="button-container">
+              <button id="startButton" type="button" class="button">
+                Bắt đầu quét
+              </button>
+              <div class="file-upload">
+                <input
+                  type="file"
+                  id="fileInput"
+                  accept="image/*"
+                  onchange="scanQRCodeFromFile(event)"
+                  style="display: none"
+                />
+                <button
+                  type="button"
+                  class="custom-button button"
+                  onclick="document.getElementById('fileInput').click()"
+                >
+                  Chọn ảnh có QR
+                </button>
+                <span id="file-name"></span>
+              </div>
+            </div>
+          </div>
+          <div class="block">
+            <h2>Đổi mật khẩu</h2>
+            <input
+              type="password"
+              id="password"
+              placeholder="Nhập mật khẩu cũ..."
+            />
+            <input
+              type="password"
+              id="reset-password"
+              placeholder="Nhập mật khẩu mới..."
+            />
+            <input
+              type="password"
+              id="confirm-password"
+              placeholder="Nhập lại mật khẩu mới..."
+            />
+            <button id="confirm_password_button" type="button">
+              Đổi mật khẩu
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Right Column -->
+      <div class="right-column">
+        <!-- Referral Code -->
+        <div class="block">
+          <h2>Nhập mã giới thiệu</h2>
+          <input type="text" id="referralCode" placeholder="Mã giới thiệu..." />
+          <button type="button">Lưu</button>
+        </div>
+
+        <!-- Payment Information -->
+        <div class="block">
+          <h2>THÔNG TIN THANH TOÁN</h2>
+          <input type="text" id="bankName" placeholder="Tên ngân hàng" />
+          <input type="text" id="accountNumber" placeholder="Số tài khoản" />
+          <input type="text" id="accountHolder" placeholder="Chủ tài khoản" />
+        </div>
+
+        <!-- Shipping Information -->
+        <div class="block">
+          <h2>THÔNG TIN GIAO/NHẬN HÀNG</h2>
+          <input type="text" id="shippingProvince" placeholder="Tỉnh/Thành" />
+          <input type="text" id="shippingDistrict" placeholder="Quận/Huyện" />
+          <input type="text" id="shippingWard" placeholder="Xã/Phường" />
+          <input
+            type="text"
+            id="shippingAddress"
+            placeholder="Số đường/ Số nhà"
+          />
+          <input type="text" id="shippingPhone" placeholder="Số điện thoại" />
+        </div>
+        <button type="button" class="update-button">Cập nhật tất cả</button>
+      </div>
+    </div>
+
+    <!-- QR Code Video and Canvas for QR Scanning -->
+
+    <script src="member.js"></script>
+    <script src="https://unpkg.com/jsqr/dist/jsQR.js"></script>
+    <script src="https://api.npoint.io/ac646cb54b295b9555be"></script>
+    <script src="https://api.npoint.io/34608ea16bebc5cffd42"></script>
+    <script src="https://api.npoint.io/dd278dc276e65c68cdf5"></script>
+  </body>
+</html>

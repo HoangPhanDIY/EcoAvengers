@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  font-family: "Montserrat", sans-serif;
+  color: #333;
+}
+
+.sidebar {
+  min-width: 260px;
+  background: linear-gradient(to left, #a27ff5, #512da8);
+  color: white;
+  padding-top: 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  z-index: 1000;
+  overflow-y: auto;
+  box-shadow: inset -2px 0 0 0 orangered;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile label img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.profile p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 200px;
+  padding: 10px 15px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.button i {
+  margin-right: 8px;
+}
+
+.button p {
+  margin: 0;
+}
+
+.button:hover {
+  color: #a1a1a1;
+}
+
+.sidebar p.sub-text {
+  font-size: 0.9em;
+  color: #ddd;
+  cursor: pointer;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  padding: 12px 20px;
+  margin: 10px 15px;
+  text-decoration: none;
+  font-weight: bold;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.sidebar a.active,
+.sidebar a:hover {
+  background-color: #ffffff;
+  color: #6a1b9a;
+  padding-left: 30px;
+  margin-right: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.container strong {
+  padding-top: auto;
+  text-align: right;
+  margin: 10px;
+}
+
+/* Nội dung chính */
+.main-content {
+  flex-grow: 1;
+  padding: 50px;
+  padding-top: 20px;
+  margin-left: 260px;
+  background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+  min-height: 100vh;
+}
+
+.main-content h2 {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.profile-item {
+  margin: 15px 0;
+  font-size: 1em;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+.profile-item strong {
+  display: inline-block;
+  width: 150px;
+  font-weight: bold;
+}
+
+.profile-item span {
+  color: #555;
+  font-size: 1em;
+}

@@ -12,38 +12,154 @@
     />
   </head>
   <body>
-    <header>
-    <div class="banner-wrapper">
-      <div class="banner-container">
-        <div class="banner">
-          <div class="slides">
-            <img src="image/slide1.png" alt="Slide 1" class="banner-image" />
-            <img src="image/slide2.png" alt="Slide 2" class="banner-image" />
-            <img src="image/slide3.png" alt="Slide 3" class="banner-image" />
-            <img src="image/slide4.png" alt="Slide 4" class="banner-image" />
-            <img src="image/slide5.png" alt="Slide 5" class="banner-image" />
+      <header>
+      <div class="banner-wrapper">
+        <div class="banner-container">
+          <div class="banner">
+            <div class="slides">
+              <img src="image/slide1.png" alt="Slide 1" class="banner-image" />
+              <img src="image/slide2.png" alt="Slide 2" class="banner-image" />
+              <img src="image/slide3.png" alt="Slide 3" class="banner-image" />
+              <img src="image/slide4.png" alt="Slide 4" class="banner-image" />
+              <img src="image/slide5.png" alt="Slide 5" class="banner-image" />
+            </div>
+            <button class="prev">‹</button>
+            <button class="next">›</button>
+            <div class="dots">
+              <span class="dot" data-index="0"></span>
+              <span class="dot" data-index="1"></span>
+              <span class="dot" data-index="2"></span>
+              <span class="dot" data-index="3"></span>
+              <span class="dot" data-index="4"></span>
+            </div>
           </div>
-          <button class="prev">‹</button>
-          <button class="next">›</button>
-          <div class="dots">
-            <span class="dot" data-index="0"></span>
-            <span class="dot" data-index="1"></span>
-            <span class="dot" data-index="2"></span>
-            <span class="dot" data-index="3"></span>
-            <span class="dot" data-index="4"></span>
-          </div>
-        </div>
-        <div class="banner-image">
-          <div class="image-top">
-            <img src="image/img1.png" alt="image-top" />
-          </div>
-          <div class="image-bottom">
-            <img src="image/img2.png" alt="image-bottom" />
-          </div>
+          <!-- <div class="banner-image">
+            <div class="image-top">
+              <img src="image/img1.png" alt="image-top" />
+            </div>
+            <div class="image-bottom">
+              <img src="image/img2.png" alt="image-bottom" />
+            </div>
+          </div> -->
         </div>
       </div>
-    </div>
-  </head>
+      </head>
+      <main>
+        <div class="container">
+        
+          <div class="category" id="fashion">
+              <h2>THỜI TRANG</h2>
+              <div class="product-grid">
+        
+                  <div class="product-card">
+                    <span class="info-icon" data-tooltip="Thông tin chi tiết sản phẩm"><i class="fa-solid fa-circle-exclamation fa-flip-vertical"></i></span>
+                      <img src="https://via.placeholder.com/200" alt="Sản phẩm 1">
+                      <div class="info">
+                          <a>Tên sản phẩm....</a>
+                          <p class="price" id="price">Giá: 0 VND</p>
+                      </div>
+                      <div class="actions">
+                          <button id="seller-info">Thông tin người bán</button>
+                          <button class="cart"><i class="fa-solid fa-cart-shopping fa-bounce"></i></button>
+                      </div>
+                  </div>
+                  
+                  <div class="product-card">
+                    <span class="info-icon" data-tooltip="Thông tin chi tiết sản phẩm"><i class="fa-solid fa-circle-exclamation fa-flip-vertical"></i></span>
+                      <img src="https://via.placeholder.com/200" alt="Sản phẩm 2">
+                      <div class="info">
+                          <a>Tên sản phẩm......</a>
+                          <p class="price" id="price">Giá: 0 VND</p>
+                      </div>
+                      <div class="actions">
+                          <button id="seller-info">Thông tin người bán</button>
+                          <button class="cart"><i class="fa-solid fa-cart-shopping fa-bounce"></i></button>
+                      </div>
+                  </div>
+                  <!-- Có thể thêm các khung sản phẩm khác -->
+              </div>
+          </div>
+  
+          <div class="category">
+              <h2>THIẾT BỊ ĐIỆN TỬ</h2>
+              <div class="product-grid">
+                  <div class="product-card">
+                    <span class="info-icon" data-tooltip="Thông tin chi tiết sản phẩm"><i class="fa-solid fa-circle-exclamation fa-flip-vertical"></i></span>
+                      <img src="https://via.placeholder.com/200" alt="Sản phẩm 3">
+                      <div class="info">
+                          <a>Tên sản phẩm......</a>
+                          <p class="price" id="price">Giá: 0 VND</p>
+                      </div>
+                      <div class="actions">
+                          <button id="seller-info">Thông tin người bán</button>
+                          <button class="cart"><i class="fa-solid fa-cart-shopping fa-bounce"></i></button>
+                      </div>
+                  </div>
+                  <!-- Lặp sản phẩm thêm -->
+              </div>
+          </div>
+  
+          <div class="category">
+            <h2>GIA DỤNG</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/200" alt="Sản phẩm 3">
+                    <span class="info-icon" data-tooltip="Thông tin chi tiết sản phẩm"><i class="fa-solid fa-circle-exclamation fa-flip-vertical"></i></span>
+                    <div class="info">
+                        <a>Tên sản phẩm......</a>
+                        <p class="price" id="price">Giá: 0 VND</p>
+                    </div>
+                    <div class="actions">
+                        <button id="seller-info">Thông tin người bán</button>
+                        <button class="cart"><i class="fa-solid fa-cart-shopping fa-bounce"></i></button>
+                    </div>
+                </div>
+                <!-- Lặp sản phẩm thêm -->
+            </div>
+          </div>
+  
+          <div class="category">
+            <h2>SÁCH</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/200" alt="Sản phẩm 3">
+                    <span class="info-icon" data-tooltip="Thông tin chi tiết sản phẩm"><i class="fa-solid fa-circle-exclamation fa-flip-vertical"></i></span>
+                    <div class="info">
+                        <a>Tên sản phẩm......</a>
+                        <p class="price" id="price">Giá: 0 VND</p>
+                    </div>
+                    <div class="actions">
+                        <button id="seller-info">Thông tin người bán</button>
+                        <button class="cart"><i class="fa-solid fa-cart-shopping fa-bounce"></i></button>
+                    </div>
+                </div>
+                <!-- Lặp sản phẩm thêm -->
+            </div>
+          </div>
+  
+          <div class="category">
+            <h2>PHƯƠNG TIỆN</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/200" alt="Sản phẩm 3">
+                    <span class="info-icon" data-tooltip="Thông tin chi tiết sản phẩm"><i class="fa-solid fa-circle-exclamation fa-flip-vertical"></i></span>
+                    <div class="info">
+                        <a>Tên sản phẩm......</a>
+                        <p class="price" id="price">Giá: 0 VND</p>
+                    </div>
+                    <div class="actions">
+                        <button id="seller-info">Thông tin người bán</button>
+                        <button class="cart" data-tooltip="Thêm vào giỏ hàng">
+                          <i class="fa-solid fa-cart-shopping fa-bounce"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- Lặp sản phẩm thêm -->
+            </div>
+          </div>
+      </main>
+
+
   </body>
   <script src="body.js"></script>
 </html>

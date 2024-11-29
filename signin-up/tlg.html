@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="tlg.css" />
+    <title>Đăng Nhập</title>
+  </head>
+
+  <body>
+    <div class="container" id="container">
+      <div class="form-container sign-up">
+        <form>
+          <h1>Tạo Tài Khoản</h1>
+          <div class="container-icon">
+            <a href="#">
+              <div class="card google">
+                <div class="circle"></div>
+                <i class="fa-brands fa-google"></i>
+              </div>
+            </a>
+            <a href="#">
+              <div class="card instagram">
+                <div class="circle"></div>
+                <i class="fa-brands fa-instagram"></i>
+              </div>
+            </a>
+            <a href="#">
+              <div class="card tiktok">
+                <div class="circle"></div>
+                <i class="fa-brands fa-tiktok"></i>
+              </div>
+            </a>
+            <a href="#">
+              <div class="card facebook">
+                <div class="circle"></div>
+                <i class="fa-brands fa-facebook-f"></i>
+              </div>
+            </a>
+          </div>
+          <span>hoặc sử dụng email để đăng ký</span>
+          <div class="container-input">
+            <div class="input-group">
+              <input
+                class="input"
+                id="fullName"
+                type="text"
+                autocomplete="off"
+                placeholder=" "
+              />
+              <label for="input">Họ và tên</label>
+            </div>
+            <div class="input-group">
+              <input
+                class="input"
+                id="email"
+                type="email"
+                autocomplete="off"
+                placeholder=" "
+              />
+              <label for="input">Email</label>
+            </div>
+            <div class="input-group">
+              <input
+                class="input"
+                type="password"
+                id="password"
+                autocomplete="off"
+                placeholder=" "
+              />
+              <label for="input">Mật khẩu</label>
+            </div>
+            <div class="input-group">
+              <input
+                class="input"
+                id="confirm-password"
+                type="password"
+                autocomplete="off"
+                placeholder=" "
+              />
+              <label for="input">Nhập lại mật khẩu</label>
+            </div>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" id="agree" />
+            <labe for="agree">
+              Tôi đã đọc và hoàn toàn đồng ý với
+              <a href="" class="agree">Điều khoản dịch vụ </a>&
+              <a href="" class="agree">Chính sách bảo mật </a>
+            </labe>
+          </div>
+          <button>Đăng Ký</button>
+        </form>
+      </div>
+      <div class="form-container sign-in">
+        <form>
+          <h1>Đăng Nhập</h1>
+          <div class="container-icon">
+            <a href="#">
+              <div class="card google">
+                <div class="circle"></div>
+                <i class="fa-brands fa-google"></i>
+              </div>
+            </a>
+            <a href="#">
+              <div class="card instagram">
+                <div class="circle"></div>
+                <i class="fa-brands fa-instagram"></i>
+              </div>
+            </a>
+            <a href="#">
+              <div class="card tiktok">
+                <div class="circle"></div>
+                <i class="fa-brands fa-tiktok"></i>
+              </div>
+            </a>
+            <a href="#">
+              <div class="card facebook">
+                <div class="circle"></div>
+                <i class="fa-brands fa-facebook-f"></i>
+              </div>
+            </a>
+          </div>
+          <span>hoặc sử dụng email</span>
+          <div class="container-input">
+            <div class="input-group">
+              <input
+                class="input"
+                type="email"
+                id="email"
+                autocomplete="off"
+                placeholder=" "
+              />
+              <label for="input">Tên đăng nhập/Email</label>
+            </div>
+            <div class="input-group">
+              <input
+                class="input"
+                type="password"
+                id="password"
+                autocomplete="off"
+                placeholder=" "
+              />
+              <label for="input">Mật khẩu</label>
+            </div>
+          </div>
+          <a href="#">Quên mật khẩu ?</a>
+          <button>Đăng Nhập</button>
+        </form>
+      </div>
+      <div class="toggle-container">
+        <div class="toggle">
+          <div class="toggle-panel toggle-left">
+            <h1>ECO AVENGERS</h1>
+            <p>Đồ Cũ - Hành Động Mới - Giữ Gìn Tương Lai</p>
+            <button class="hidden" id="login">Đăng Nhập</button>
+          </div>
+          <div class="toggle-panel toggle-right">
+            <h1>Seco chào bạn !</h1>
+            <p>
+              <strong>Eco Avengers</strong> Hàng triệu món đồ bị bỏ quên. Chúng
+              tôi mang chúng trở lại vòng tay của những người cần
+            </p>
+            <button class="hidden" id="register">Đăng Ký</button>
+          </div>
+        </div>
+      </div>
+      <div class="close">
+        <button
+          class="close-button"
+          onclick="document.getElementById('container').style.display='none'"
+        >
+          &times;
+        </button>
+      </div>
+    </div>
+    <script src="tlg.js"></script>
+  </body>
+</html>

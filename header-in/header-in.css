@@ -1,0 +1,615 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #fff;
+  padding-left: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.top-bar {
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0 8px 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  position: absolute;
+}
+
+.top-bar .logo .eco {
+  font-size: 35px;
+  color: #000;
+}
+
+.top-bar .logo .avengers {
+  font-size: 35px;
+  color: #01ca55;
+}
+
+/* menu chính */
+.main-menu {
+  list-style-type: none;
+  margin: 0px auto;
+  display: flex;
+  gap: 25px;
+  justify-content: space-around;
+  justify-items: center;
+  font-weight: 600;
+  position: relative;
+  left: 50%;
+  border-right: 2px solid #ffffff81;
+}
+
+.main-menu > li {
+  position: relative;
+}
+
+.main-menu li a {
+  color: #000;
+  text-decoration: none;
+  position: relative;
+  display: block;
+}
+
+/* hover menu chính */
+.main-menu > li > a::after {
+  content: "";
+  position: absolute;
+  bottom: -2.5px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #00af49;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.main-menu > li > a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* menu con */
+#sub-menu {
+  z-index: 1;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 120%;
+  left: 0;
+  background-color: #fff;
+  display: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  width: 200px;
+  font-size: 14px;
+}
+
+#sub-menu li {
+  border-top: 1px solid #cccccc;
+}
+
+#sub-menu li:first-child {
+  border-top: none;
+}
+
+.main-menu > li:hover #sub-menu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+#sub-menu li a {
+  text-decoration: none;
+  color: #00a846;
+  padding: 8px 12px;
+  display: block;
+  border-right: 1px solid #00a846;
+}
+
+#sub-menu li:last-child {
+  border-bottom: none;
+}
+
+#sub-menu li a:hover {
+  background-color: #f5f5f5;
+}
+
+/* hover menu con */
+#sub-menu li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #00a846;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+#sub-menu li a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+#sub-menu > li > a {
+  position: relative;
+}
+
+/* menu con bậc 2 */
+#sub-menu #sub-menu {
+  display: none;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 100%;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+#sub-menu > li > a:hover + #sub-menu {
+  display: block;
+}
+
+#sub-menu li {
+  position: relative;
+}
+
+#sub-menu li:hover > #sub-menu {
+  display: block;
+}
+
+#sub-menu #sub-menu li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #00a846;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+#sub-menu #sub-menu li a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.header-list {
+  list-style-type: none;
+  padding: 0;
+  /* margin: 10px; */
+  display: flex;
+  align-items: center;
+  border-left: 2px solid #ffffff81;
+  height: 35px;
+}
+
+.account {
+  display: flex;
+  background-color: #00a846;
+  padding-left: 50px;
+  border-top-left-radius: 100px;
+  box-shadow: 0 4px 100px rgba(0, 0, 0, 0.2);
+}
+
+/* search */
+
+.social-search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+::selection {
+  color: #000;
+  background: #664aff;
+}
+
+.search-box {
+  position: relative;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  border-color: #00a846;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.search-box.active {
+  width: 250px;
+  right: 100px;
+  padding-right: 20px;
+}
+
+.search-box input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 50px;
+  background: #f0f0f0;
+  outline: none;
+  padding: 0 60px 0 20px;
+  font-size: 18px;
+  opacity: 0;
+  transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.search-box input.active {
+  opacity: 1;
+}
+
+.search-box input::placeholder {
+  color: #a6a6a6;
+  font-size: 14px;
+}
+
+.search-box .search-icon {
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 35px;
+  width: 35px;
+  background: #fff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 35px;
+  font-size: 18px;
+  color: #00a846;
+  cursor: pointer;
+  z-index: 1;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.search-box .search-icon.active {
+  right: -55px;
+  height: 30px;
+  line-height: 30px;
+  width: 30px;
+  font-size: 14px;
+  background: #00a846;
+  color: #fff;
+  transform: translateY(-50%) rotate(360deg);
+}
+
+.search-box .cancel-icon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.5s 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.search-box .cancel-icon:hover {
+  color: red;
+}
+
+.search-box .cancel-icon.active {
+  right: -80px;
+  transform: translateY(-50%) rotate(360deg);
+}
+
+.search-box .search-data {
+  text-align: center;
+  padding-top: 7px;
+  color: #fff;
+  font-size: 14px;
+  word-wrap: break-word;
+}
+
+.search-box .search-data.active {
+  display: none;
+}
+
+.social-media {
+  justify-items: center;
+  align-items: center;
+  gap: 10px;
+}
+
+span {
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.container-icon {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.container-icon:hover > :not(:hover) {
+  filter: blur(2px);
+  opacity: 0.5;
+}
+
+.card {
+  display: flex;
+  margin: auto;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border-radius: 10px;
+  transition: all 2s;
+}
+
+.instagram,
+.tiktok,
+.facebook,
+.google,
+.twitter,
+.linkedin {
+  align-items: start;
+  justify-content: center;
+  align-items: center;
+}
+
+.instagram i,
+.tiktok i,
+.facebook i,
+.google i,
+.twitter i,
+.linkedin i {
+  position: absolute;
+  margin: auto;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.instagram .circle {
+  position: absolute;
+  margin: auto;
+  margin-right: 0px;
+  width: 0px;
+  height: 0px;
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+  border-radius: 15px;
+  transition: all 0.5s;
+}
+
+.instagram:hover {
+  .circle {
+    background: radial-gradient(
+      circle at 30% 107%,
+      #fdf497 0%,
+      #fdf497 5%,
+      #fd5949 45%,
+      #d6249f 60%,
+      #285aeb 90%
+    );
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    transition: all 0.5s;
+  }
+
+  .fa-brands {
+    color: #ffffff;
+  }
+
+  .card:hover {
+    border-color: white;
+  }
+}
+
+.tiktok .circle {
+  position: absolute;
+  margin: auto;
+  margin-right: 0px;
+  width: 0px;
+  height: 0px;
+  background: #2a2a2a;
+  border-radius: 15px;
+  transition: all 0.5s;
+}
+
+.tiktok:hover {
+  .circle {
+    background: #2a2a2a;
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    transition: all 0.5s;
+  }
+
+  .fa-brands {
+    color: #ffffff;
+  }
+
+  .card:hover {
+    border-color: white;
+  }
+}
+
+.facebook .circle {
+  position: absolute;
+  margin: auto;
+  margin-right: 0px;
+  width: 0px;
+  height: 0px;
+  background: linear-gradient(to top, #0165e1, #17a9fd);
+  border-radius: 15px;
+  transition: all 0.5s;
+}
+
+.facebook:hover {
+  .circle {
+    background: linear-gradient(to top, #0165e1, #17a9fd);
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    transition: all 0.5s;
+  }
+
+  .fa-brands {
+    color: #ffffff;
+  }
+
+  .card:hover {
+    border-color: white;
+  }
+}
+
+.twitter .circle {
+  position: absolute;
+  margin: auto;
+  margin-right: 0px;
+  width: 0px;
+  height: 0px;
+  background: #2a2a2a;
+  border-radius: 10px;
+  transition: all 0.5s;
+}
+
+.twitter:hover {
+  .circle {
+    background: #1da1f2;
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    transition: all 0.5s;
+  }
+
+  .fa-twitter {
+    color: #ffffff;
+  }
+
+  .card-icon:hover {
+    border-color: white;
+  }
+}
+
+.linkedin .circle {
+  position: absolute;
+  margin: auto;
+  margin-right: 0px;
+  width: 0px;
+  height: 0px;
+  background: #2a2a2a;
+  border-radius: 10px;
+  transition: all 0.5s;
+}
+
+.linkedin:hover {
+  .circle {
+    background: #0d64ca;
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    transition: all 0.5s;
+  }
+
+  .fa-twitter {
+    color: #ffffff;
+  }
+
+  .card-icon:hover {
+    border-color: white;
+  }
+}
+
+/* menu acc */
+.header-list-link-login {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  font-size: 20px;
+  color: #fff;
+}
+
+.header-list-link-login a {
+  font-size: 10px;
+  color: #fff;
+}
+
+#account-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: none;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  z-index: 1000;
+}
+
+.header-list-link-login:hover #account-menu {
+  display: block;
+}
+
+#account-menu li {
+  border-top: 1px solid #e0e0e0;
+}
+
+#account-menu li:first-child {
+  border-top: none;
+}
+
+#account-menu li a {
+  text-decoration: none;
+  color: #00a846;
+  padding: 8px 12px;
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+#account-menu li a:hover {
+  background-color: #f5f5f5;
+}
+
+.header-list-login,
+.header-list-cart {
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.header-list-link-login:hover {
+  color: #f0f0f0;
+}
+
+.header-list-link img {
+  width: 16px;
+  margin-right: 3px;
+}
+
+.user-cart a img {
+  width: 20px;
+  margin-left: 10px;
+}
+
+#header-menu nav.container {
+  padding: 5px;
+}

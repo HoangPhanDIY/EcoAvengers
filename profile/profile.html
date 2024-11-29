@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản Lý Hồ Sơ</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="profile.css" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="profile">
+        <label for="avatar-input">
+          <img id="avatar" src="viettel-logo.png" alt="" />
+        </label>
+        <input
+          id="avatar-input"
+          type="file"
+          accept="image/*"
+          style="display: none"
+        />
+        <p id="user-name">Đang tải...</p>
+        <div class="button">
+          <i class="fa-solid fa-user-pen"></i>
+          <p class="sub-text">Sửa hồ sơ</p>
+        </div>
+      </div>
+      <a href="#" onclick="showSection('home')" id="home-link">Trang chủ</a>
+      <a
+        href="#"
+        onclick="showSection('account')"
+        id="account-link"
+        class="active"
+        >Tài Khoản Của Tôi
+      </a>
+      <a
+        href="#"
+        onclick="showSection('account-update')"
+        id="account-update-link"
+        >Cập Nhật Thông Tin
+      </a>
+      <a href="#" onclick="showSection('purchase')" id="purchase-link"
+        >Đơn Mua
+      </a>
+      <a href="#" onclick="showSection('sale')" id="sale-link">Đơn Bán</a>
+      <a
+        href="#"
+        onclick="showSection('confirm_password')"
+        id="confirm_password-link"
+        >Đổi Mật Khẩu
+      </a>
+      <a href="#" onclick="showSection('notification')" id="notification-link"
+        >Thông Báo
+      </a>
+      <a href="#" onclick="showSection('voucher')" id="voucher-link"
+        >Kho Voucher
+      </a>
+    </div>
+    <div class="main-content">
+      <div id="home" class="content-section" style="display: none">
+        <p>Chào mừng bạn đến với trang quản lý!</p>
+      </div>
+      <div id="account" class="content-section">
+        <div class="container">
+          <div class="profile-item">
+            <strong>Tên:</strong> <span id="fullName1">Chưa cập nhật</span>
+          </div>
+          <div class="profile-item">
+            <strong>Email:</strong> <span id="email">Chưa cập nhật</span>
+          </div>
+          <div class="profile-item">
+            <strong>Số điện thoại:</strong>
+            <span id="phone">Chưa cập nhật</span>
+          </div>
+          <div class="profile-item">
+            <strong>Giới tính:</strong>
+            <span id="gender-selection">Chưa cập nhật</span>
+          </div>
+          <div class="profile-item">
+            <strong>Ngày sinh:</strong> <span id="dob">Chưa cập nhật</span>
+          </div>
+        </div>
+      </div>
+      <div id="account-update" class="content-section" style="display: none">
+        <form id="personal_info_form">
+          <h2>Thông Tin Cá Nhân</h2>
+          <label for="fullName">Họ & Tên <span>*</span></label>
+          <input type="text" id="fullName" placeholder="Họ và Tên" />
+          <div class="gender-selection">
+            <label for="gender">Giới tính:</label>
+
+            <div class="gender-option">
+              <input type="radio" id="male" name="gender" value="male" />
+              <label for="male">Nam</label>
+            </div>
+
+            <div class="gender-option">
+              <input type="radio" id="female" name="gender" value="female" />
+              <label for="female">Nữ</label>
+            </div>
+
+            <div class="gender-option">
+              <input type="radio" id="other" name="gender" value="other" />
+              <label for="other">Khác</label>
+            </div>
+          </div>
+          <label for="idNumber">Hộ Chiếu/CMND/CCCD <span>*</span></label>
+          <input type="text" id="idNumber" placeholder="Căn cước công dân" />
+          <label for="issueDate">Ngày Cấp <span>*</span></label>
+          <input type="text" id="issueDate" placeholder="Ngày cấp" />
+          <div class="dob">
+            <p>
+              <label for="email">Ngày/Tháng/Năm Sinh <span>*</span></label>
+            </p>
+            <select id="day">
+              <option value="">Ngày</option>
+            </select>
+            <select id="month">
+              <option value="">Tháng</option>
+            </select>
+            <select id="year">
+              <option value="">Năm</option>
+            </select>
+          </div>
+          <div class="place">
+            <p>
+              <label for="place">Địa chỉ <span>*</span></label>
+            </p>
+            <select id="province">
+              <option value="">Chọn tỉnh/thành</option>
+            </select>
+            <select id="district">
+              <option value="">Chọn quận/huyện</option>
+            </select>
+            <select id="ward">
+              <option value="">Chọn xã/phường</option>
+            </select>
+            <input type="text" id="address" placeholder="Thôn/xóm" />
+          </div>
+          <input type="text" id="address" placeholder="Số đường/ Số nhà" />
+          <label for="phone">Số điện thoại <span>*</span></label>
+          <input type="text" id="phone" placeholder="Số điện thoại" />
+          <label for="email">Email <span>*</span></label>
+          <input type="email" id="email" placeholder="Email" />
+        </form>
+        <div class="button-row">
+          <video id="preview" style="display: none" autoplay></video>
+          <canvas id="canvas" style="display: none"></canvas>
+          <iframe
+        src="scanqr/scanqr.html"
+        frameborder="0"
+        id="scanqr"
+        width="600"
+        height="500"
+        scrolling="no"
+        style="border: none; display: none"
+      ></iframe>
+
+          <div class="button-container">
+            <button id="startButton" type="button" class="button">
+              Quét QR Trên CCCD
+            </button>
+            <div class="file-upload">
+              <input
+                type="file"
+                id="fileInput"
+                accept="image/*"
+                onchange="scanQRCodeFromFile(event)"
+                style="display: none"
+              />
+              <button
+                type="button"
+                class="custom-button button"
+                onclick="document.getElementById('fileInput').click()"
+              >
+                Chọn ảnh có QR
+              </button>
+              <span id="file-name"></span>
+            </div>
+          </div>
+        </div>
+        <button type="button" id="update_button" class="update-button">
+          CẬP NHẬT TẤT CẢ
+        </button>
+      </div>
+      <div id="purchase" class="content-section" style="display: none">
+        <div class="container">
+          <div class="nav-tabs">
+            <button class="tab-btn active">Đơn đã đặt</button>
+            <button class="tab-btn">Chờ giao hàng</button>
+            <button class="tab-btn">Đang giao</button>
+            <button class="tab-btn">Đã nhận hàng</button>
+            <button class="tab-btn">Đơn hủy</button>
+            <button class="tab-btn">Trả hàng</button>
+            <button class="tab-btn">Đánh giá</button>
+          </div>
+
+          <div class="order-nav">
+            <ul>
+              <li>
+                <button
+                  class="back_button"
+                  id="back_button"
+                  onclick="backToOrders()"
+                >
+                  <i class="fa-solid fa-right-from-bracket"></i>
+                  Trở Lại
+                </button>
+              </li>
+              <li>
+                <div class="order-id" id="order-id">
+                  Mã đơn hàng: <span id="order-code">Đang tải...</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="progress-container">
+            <div class="step completed">
+              <div class="circle"><i class="fa-solid fa-receipt"></i></div>
+              <p>Đơn hàng đã đặt</p>
+            </div>
+            <div class="step completed">
+              <div class="circle"><i class="fa-solid fa-box"></i></div>
+              <p>Chờ lấy hàng</p>
+            </div>
+            <div class="step active">
+              <div class="circle"><i class="fa-solid fa-clock"></i></div>
+              <p>Chờ giao hàng</p>
+            </div>
+            <div class="step">
+              <div class="circle"><i class="fa-solid fa-truck"></i></div>
+              <p>Đang giao</p>
+            </div>
+            <div class="step">
+              <div class="circle"><i class="fa-solid fa-box-open"></i></div>
+              <p>Đã nhận hàng</p>
+            </div>
+            <div class="step">
+              <div class="circle"><i class="fa-solid fa-star"></i></div>
+              <p>Đánh giá</p>
+            </div>
+          </div>
+
+          <div class="order-info">
+            <div class="info">
+              <p><b>Thông tin đơn hàng</b></p>
+              <p>
+                <span class="icon"><i class="fa-solid fa-user"></i></span>
+                <span id="username"></span>
+              </p>
+              <p>
+                <span class="icon"><i class="fa-solid fa-phone"></i></span>
+                <span id="phone"></span>
+              </p>
+              <p>
+                <span class="icon"
+                  ><i class="fa-solid fa-location-dot"></i
+                ></span>
+                <span id="address"></span>
+              </p>
+              <p>
+                <span class="icon"><i class="fa-solid fa-truck"></i></span>
+                <span id="delivery-method"></span>
+              </p>
+              <p>
+                <span class="icon"
+                  ><i class="fa-solid fa-credit-card"></i
+                ></span>
+                <span id="payment-method"></span>
+              </p>
+            </div>
+            <div class="map">
+              <img
+                src="https://via.placeholder.com/400x200?text=Google+Maps"
+                alt="Google Maps"
+              />
+            </div>
+          </div>
+
+          <div class="actions">
+            <button id="cancel-btn">Hủy đơn hàng</button>
+            <button id="contact-btn">Liên hệ người bán</button>
+          </div>
+        </div>
+      </div>
+      <div id="sale" class="content-section" style="display: none">
+        <div class="container">
+          <div class="nav-tabs">
+            <button class="tab-btn active" onclick="showTab('order-placed')">
+              Đơn đã đặt
+            </button>
+            <button class="tab-btn" onclick="showTab('awaiting-shipping')">
+              Chờ giao hàng
+            </button>
+            <button class="tab-btn" onclick="showTab('in-transit')">
+              Đang giao
+            </button>
+            <button class="tab-btn" onclick="showTab('delivered')">
+              Đã nhận hàng
+            </button>
+            <button class="tab-btn" onclick="showTab('cancelled')">
+              Đơn hủy
+            </button>
+            <button class="tab-btn" onclick="showTab('returned')">
+              Trả hàng
+            </button>
+            <button class="tab-btn" onclick="showTab('reviews')">
+              Đánh giá
+            </button>
+          </div>
+
+          <div id="order-placed" class="tab-content active-tab">
+            <div class="container">
+              <div id="order-list">
+                <div class="product" id="order-1">
+                  <img src="image1.jpg" alt="Product Image" />
+                  <div class="product-details">
+                    <div>Product 1</div>
+                    <div>Description of product 1</div>
+                    <div class="product-price">0 VND</div>
+                  </div>
+                  <a href="#" class="view-details" onclick="showOrderDetails('order-1-details')">Xem chi tiết đơn hàng</a>
+                </div>
+              
+                <div class="product" id="order-2">
+                  <img src="image2.jpg" alt="Product Image" />
+                  <div class="product-details">
+                    <div>Product 2</div>
+                    <div>Description of product 2</div>
+                    <div class="product-price">0 VND</div>
+                  </div>
+                  <a href="#" class="view-details" onclick="showOrderDetails('order-2-details')">Xem chi tiết đơn hàng</a>
+                </div>
+              </div>
+              
+              <!-- Chi tiết đơn hàng -->
+              <div id="order-1-details" class="order-details">
+                <div class="order-nav">
+                  <ul>
+                    <li>
+                      <button
+                        class="back_button"
+                        id="back_button"
+                        onclick="backToOrders()"
+                      >
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        Trở Lại
+                      </button>
+                    </li>
+                    <li>
+                      <div class="order-id" id="order-id">
+                        Mã đơn hàng: <span id="order-code">Đang tải...</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+      
+                <div class="progress-container">
+                  <div class="step completed">
+                    <div class="circle"><i class="fa-solid fa-receipt"></i></div>
+                    <p>Đơn hàng đã đặt</p>
+                  </div>
+                  <div class="step completed">
+                    <div class="circle"><i class="fa-solid fa-box"></i></div>
+                    <p>Chờ lấy hàng</p>
+                  </div>
+                  <div class="step active">
+                    <div class="circle"><i class="fa-solid fa-clock"></i></div>
+                    <p>Chờ giao hàng</p>
+                  </div>
+                  <div class="step">
+                    <div class="circle"><i class="fa-solid fa-truck"></i></div>
+                    <p>Đang giao</p>
+                  </div>
+                  <div class="step">
+                    <div class="circle"><i class="fa-solid fa-box-open"></i></div>
+                    <p>Đã nhận hàng</p>
+                  </div>
+                  <div class="step">
+                    <div class="circle"><i class="fa-solid fa-star"></i></div>
+                    <p>Đánh giá</p>
+                  </div>
+                </div>
+      
+                <div class="order-info">
+                  <div class="info">
+                    <p><b>Thông tin đơn hàng</b></p>
+                    <p>
+                      <span class="icon"><i class="fa-solid fa-user"></i></span>
+                      <span id="username"></span>
+                    </p>
+                    <p>
+                      <span class="icon"><i class="fa-solid fa-phone"></i></span>
+                      <span id="phone"></span>
+                    </p>
+                    <p>
+                      <span class="icon"
+                        ><i class="fa-solid fa-location-dot"></i
+                      ></span>
+                      <span id="address"></span>
+                    </p>
+                    <p>
+                      <span class="icon"><i class="fa-solid fa-truck"></i></span>
+                      <span id="delivery-method"></span>
+                    </p>
+                    <p>
+                      <span class="icon"
+                        ><i class="fa-solid fa-credit-card"></i
+                      ></span>
+                      <span id="payment-method"></span>
+                    </p>
+                  </div>
+                  <div class="map">
+                    <img
+                      src="https://via.placeholder.com/400x200?text=Google+Maps"
+                      alt="Google Maps"
+                    />
+                  </div>
+                </div>
+      
+                <div class="actions">
+                  <button id="cancel-btn">Hủy đơn hàng</button>
+                  <button id="contact-btn">Liên hệ người bán</button>
+                </div>
+              </div>
+              
+              <div id="order-2-details" class="order-details">
+                <div class="order-nav">
+                  <ul>
+                    <li>
+                      <button
+                        class="back_button"
+                        id="back_button"
+                        onclick="backToOrders()"
+                      >
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        Trở Lại
+                      </button>
+                    </li>
+                    <li>
+                      <div class="order-id" id="order-id">
+                        Mã đơn hàng: <span id="order-code">Đang tải...</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+      
+                <div class="progress-container">
+                  <div class="step completed">
+                    <div class="circle"><i class="fa-solid fa-receipt"></i></div>
+                    <p>Đơn hàng đã đặt</p>
+                  </div>
+                  <div class="step completed">
+                    <div class="circle"><i class="fa-solid fa-box"></i></div>
+                    <p>Chờ lấy hàng</p>
+                  </div>
+                  <div class="step active">
+                    <div class="circle"><i class="fa-solid fa-clock"></i></div>
+                    <p>Chờ giao hàng</p>
+                  </div>
+                  <div class="step">
+                    <div class="circle"><i class="fa-solid fa-truck"></i></div>
+                    <p>Đang giao</p>
+                  </div>
+                  <div class="step">
+                    <div class="circle"><i class="fa-solid fa-box-open"></i></div>
+                    <p>Đã nhận hàng</p>
+                  </div>
+                  <div class="step">
+                    <div class="circle"><i class="fa-solid fa-star"></i></div>
+                    <p>Đánh giá</p>
+                  </div>
+                </div>
+      
+                <div class="order-info">
+                  <div class="info">
+                    <p><b>Thông tin đơn hàng</b></p>
+                    <p>
+                      <span class="icon"><i class="fa-solid fa-user"></i></span>
+                      <span id="username"></span>
+                    </p>
+                    <p>
+                      <span class="icon"><i class="fa-solid fa-phone"></i></span>
+                      <span id="phone"></span>
+                    </p>
+                    <p>
+                      <span class="icon"
+                        ><i class="fa-solid fa-location-dot"></i
+                      ></span>
+                      <span id="address"></span>
+                    </p>
+                    <p>
+                      <span class="icon"><i class="fa-solid fa-truck"></i></span>
+                      <span id="delivery-method"></span>
+                    </p>
+                    <p>
+                      <span class="icon"
+                        ><i class="fa-solid fa-credit-card"></i
+                      ></span>
+                      <span id="payment-method"></span>
+                    </p>
+                  </div>
+                  <div class="map">
+                    <img
+                      src="https://via.placeholder.com/400x200?text=Google+Maps"
+                      alt="Google Maps"
+                    />
+                  </div>
+                </div>
+      
+                <div class="actions">
+                  <button id="cancel-btn">Hủy đơn hàng</button>
+                  <button id="contact-btn">Liên hệ người bán</button>
+                </div>
+              </div>              
+          </div>
+          <div id="awaiting-shipping" class="tab-content">
+            Nội dung của "Chờ giao hàng"
+          </div>
+          <div id="in-transit" class="tab-content">
+            Nội dung của "Đang giao"
+          </div>
+          <div id="delivered" class="tab-content">
+            Nội dung của "Đã nhận hàng"
+          </div>
+          <div id="cancelled" class="tab-content">Nội dung của "Đơn hủy"</div>
+          <div id="returned" class="tab-content">Nội dung của "Trả hàng"</div>
+          <div id="reviews" class="tab-content">Nội dung của "Đánh giá"</div>
+        </div>
+      </div>
+      <div id="confirm_password" class="content-section" style="display: none">
+        <div class="container confirm-password">
+          <h2>Đổi mật khẩu</h2>
+          <input
+            type="password"
+            id="password"
+            placeholder="Nhập mật khẩu cũ..."
+          />
+          <input
+            type="password"
+            id="reset-password"
+            placeholder="Nhập mật khẩu mới..."
+          />
+          <input
+            type="password"
+            id="confirm-password"
+            placeholder="Nhập lại mật khẩu mới..."
+          />
+          <button type="button">Đổi mật khẩu</button>
+        </div>
+      </div>
+      <div id="notification" class="content-section" style="display: none">
+        <p>Thông tin Thông báo...</p>
+      </div>
+      <div id="voucher" class="content-section" style="display: none">
+        <p>Thông tin Kho voucher...</p>
+      </div>
+    </div>
+    <script src="https://unpkg.com/jsqr/dist/jsQR.js"></script>
+    <script src="profile.js"></script>
+  </body>
+</html>

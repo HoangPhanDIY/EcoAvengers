@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thông tin cá nhân</title>
+    <link rel="stylesheet" href="information.css" />
+  </head>
+  <body>
+    <form id="personal_info_form">
+      <h1>Thông Tin Cá Nhân</h1>
+      <label for="fullName">Họ & Tên <span>*</span></label>
+      <input type="text" id="fullName" placeholder="Họ và Tên" />
+      <div class="gender-selection">
+        <label for="gender">Giới tính:</label>
+
+        <div class="gender-option">
+          <input type="radio" id="male" name="gender" value="male" />
+          <label for="male">Nam</label>
+        </div>
+
+        <div class="gender-option">
+          <input type="radio" id="female" name="gender" value="female" />
+          <label for="female">Nữ</label>
+        </div>
+
+        <div class="gender-option">
+          <input type="radio" id="other" name="gender" value="other" />
+          <label for="other">Khác</label>
+        </div>
+      </div>
+      <label for="idNumber">Hộ Chiếu/CMND/CCCD <span>*</span></label>
+      <input type="text" id="idNumber" placeholder="Căn cước công dân" />
+      <label for="issueDate">Ngày Cấp <span>*</span></label>
+      <input type="text" id="issueDate" placeholder="Ngày cấp" />
+      <div class="dob">
+        <p>
+          <label for="email">Ngày/Tháng/Năm Sinh <span>*</span></label>
+        </p>
+        <select id="day">
+          <option value="">Ngày</option>
+        </select>
+        <select id="month">
+          <option value="">Tháng</option>
+        </select>
+        <select id="year">
+          <option value="">Năm</option>
+        </select>
+      </div>
+      <div class="place">
+        <p>
+          <label for="place">Địa chỉ <span>*</span></label>
+        </p>
+        <select id="province">
+          <option value="">Chọn tỉnh/thành</option>
+        </select>
+        <select id="district">
+          <option value="">Chọn quận/huyện</option>
+        </select>
+        <select id="ward">
+          <option value="">Chọn xã/phường</option>
+        </select>
+        <input type="text" id="address" placeholder="Thôn/xóm" />
+      </div>
+      <input type="text" id="address" placeholder="Số đường/ Số nhà" />
+      <label for="phone">Số điện thoại <span>*</span></label>
+      <input type="text" id="phone" placeholder="Số điện thoại" />
+      <label for="email">Email <span>*</span></label>
+      <input type="email" id="email" placeholder="Email" />
+    </form>
+    <div class="button-row">
+      <video id="preview" style="display: none" autoplay></video>
+      <canvas id="canvas" style="display: none"></canvas>
+      <iframe
+        src="scanqr/scanqr.html"
+        frameborder="0"
+        id="scanqr"
+        width="600"
+        height="500"
+        scrolling="no"
+        style="border: none; display: none"
+      ></iframe>
+
+      <div class="button-container">
+        <button id="startButton" type="button" class="button">
+          Quét QR Trên CCCD
+        </button>
+        <div class="file-upload">
+          <input
+            type="file"
+            id="fileInput"
+            accept="image/*"
+            onchange="scanQRCodeFromFile(event)"
+            style="display: none"
+          />
+          <button
+            type="button"
+            class="custom-button button"
+            onclick="document.getElementById('fileInput').click()"
+          >
+            Chọn ảnh có QR
+          </button>
+          <span id="file-name"></span>
+        </div>
+      </div>
+    </div>
+    <button type="button" id="update_button" class="update-button">
+      CẬP NHẬT TẤT CẢ
+    </button>
+    <script src="information.js"></script>
+    <script src="https://unpkg.com/jsqr/dist/jsQR.js"></script>
+    <script src="https://api.npoint.io/ac646cb54b295b9555be"></script>
+    <script src="https://api.npoint.io/34608ea16bebc5cffd42"></script>
+    <script src="https://api.npoint.io/dd278dc276e65c68cdf5"></script>
+  </body>
+</html>

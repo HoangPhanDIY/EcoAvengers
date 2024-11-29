@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản Lý Hồ Sơ</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="info-manager.css" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="profile">
+        <label for="avatar-input">
+          <img id="avatar" src="viettel-logo.png" alt="" />
+        </label>
+        <input
+          id="avatar-input"
+          type="file"
+          accept="image/*"
+          style="display: none"
+        />
+        <p id="user-name">Đang tải...</p>
+        <div class="button">
+          <i class="fa-solid fa-user-pen"></i>
+          <p class="sub-text">Sửa hồ sơ</p>
+        </div>
+      </div>
+      <a href="#" onclick="showSection('home')" id="home-link">Trang chủ</a>
+      <a
+        href="#"
+        onclick="showSection('account')"
+        id="account-link"
+        class="active"
+        >Tài Khoản Của Tôi
+      </a>
+      <a
+        href="#"
+        onclick="showSection('account-update')"
+        id="account-update-link"
+        >Cập Nhật Thông Tin
+      </a>
+      <a href="#" onclick="showSection('purchase')" id="purchase-link"
+        >Đơn Mua
+      </a>
+      <a href="#" onclick="showSection('sale')" id="sale-link">Đơn Bán</a>
+      <a
+        href="#"
+        onclick="showSection('confirm_password')"
+        id="confirm_password-link"
+        >Đổi Mật Khẩu
+      </a>
+      <a href="#" onclick="showSection('notification')" id="notification-link"
+        >Thông Báo
+      </a>
+      <a href="#" onclick="showSection('voucher')" id="voucher-link"
+        >Kho Voucher
+      </a>
+    </div>
+    <div class="main-content">
+      <div id="home" class="content-section" style="display: none">
+        <p>Chào mừng bạn đến với trang quản lý!</p>
+      </div>
+      <div id="account-update" class="content-section" style="display: none">
+        <div class="container">
+          <iframe
+            src="informatinon/information.html"
+            width="100%"
+            height="800"
+            scrolling="no"
+            style="border: none"
+          ></iframe>
+          <script>
+            // Hiển thị `div` khi cần
+            document.getElementById("account-update").style.display = "block";
+          </script>
+        </div>
+      </div>
+
+      <div id="purchase" class="content-section" style="display: none"></div>
+      <div id="sale" class="content-section" style="display: none"></div>
+      <div
+        id="confirm_password"
+        class="content-section"
+        style="display: none"
+      ></div>
+      <div id="notification" class="content-section" style="display: none">
+        <p>Thông tin Thông báo...</p>
+      </div>
+      <div id="voucher" class="content-section" style="display: none">
+        <p>Thông tin Kho voucher...</p>
+      </div>
+    </div>
+    <script src="https://unpkg.com/jsqr/dist/jsQR.js"></script>
+    <script src="info-manager.js"></script>
+  </body>
+</html>

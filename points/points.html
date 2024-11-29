@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tích Điểm - Đổi Quà</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="points.css" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="profile">
+        <label for="avatar-input">
+          <img id="avatar" src="viettel-logo.png" alt="" />
+        </label>
+        <input
+          id="avatar-input"
+          type="file"
+          accept="image/*"
+          style="display: none"
+        />
+        <p id="user-name">Đang tải...</p>
+        <div class="button">
+          <i class="fa-solid fa-user-pen"></i>
+          <p class="sub-text">Sửa hồ sơ</p>
+        </div>
+      </div>
+      <a href="#" onclick="showSection('home')" id="home-link">Trang chủ</a>
+      <a
+        href="#"
+        onclick="showSection('points')"
+        id="points-link"
+        class="active"
+        >Tích Điểm
+      </a>
+      <a href="#" onclick="showSection('gifts')" id="gifts-link">Đổi Quà </a>
+      <a href="#" onclick="showSection('study')" id="study-link"
+        >Quỹ Khuyến Học
+      </a>
+      <a href="#" onclick="showSection('scholarship')" id="scholarship-link"
+        >Học Bổng SECO
+      </a>
+      <a href="#" onclick="showSection('volunteer')" id="volunteer-link"
+        >Thiện Nguyện
+      </a>
+      <a href="#" onclick="showSection('notification')" id="notification-link"
+        >Thông Báo
+      </a>
+    </div>
+    <div class="main-content">
+      <div id="home" class="content-section" style="display: none">
+        <p>Chào mừng bạn đến với trang quản lý!</p>
+      </div>
+      <div id="points" class="content-section">
+        <div class="container">hh</div>
+      </div>
+      <div id="gifts" class="content-section" style="display: none">
+        <div class="container"><p>Thông tin Đơn mua...</p></div>
+      </div>
+      <div id="study" class="content-section" style="display: none">
+        <div class="container"><p>hh</p></div>
+      </div>
+      <div id="scholarship" class="content-section" style="display: none">
+        <div class="container"><p>Thông tin Đơn bán...</p></div>
+      </div>
+      <div id="volunteer" class="content-section" style="display: none">
+        <div class="container"><p>mk.</p></div>
+      </div>
+      <div id="notification" class="content-section" style="display: none">
+        <div class="container"><p>Thông tin Thông báo...</p></div>
+      </div>
+    </div>
+
+    <script src="points.js"></script>
+  </body>
+</html>
